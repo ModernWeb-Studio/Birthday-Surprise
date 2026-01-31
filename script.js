@@ -886,52 +886,11 @@ function personalizeWebsite(name = 'Birthday Star', message = 'Today is YOUR day
     document.title = `🎉 Happy Birthday ${name}! | A Special Surprise`;
 }
 
-// ===== EASTER EGG - KONAMI CODE =====
-let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-let konamiIndex = 0;
+// ===== EASTER EGG REMOVED =====
+// No keyboard shortcuts - surprise only via button
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === konamiCode[konamiIndex]) {
-        konamiIndex++;
-        if (konamiIndex === konamiCode.length) {
-            triggerMassiveConfetti();
-            // playSound('cheer');
-
-            const easterEggMsg = document.createElement('div');
-            easterEggMsg.className = 'easter-egg-message';
-            easterEggMsg.innerHTML = `
-                <h2>🎮 SECRET UNLOCKED! 🎮</h2>
-                <p>You found the Konami code Easter egg!</p>
-                <p class="small">You're officially a legend! 👑✨</p>
-            `;
-            document.body.appendChild(easterEggMsg);
-
-            setTimeout(() => {
-                easterEggMsg.style.animation = 'fadeOut 0.5s ease-out forwards';
-                setTimeout(() => easterEggMsg.remove(), 500);
-            }, 4000);
-
-            konamiIndex = 0;
-        }
-    } else {
-        konamiIndex = 0;
-    }
-});
-
-// ===== KEYBOARD SHORTCUTS =====
-document.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === 'm' && !e.ctrlKey && !e.metaKey) {
-        toggleMusic();
-    }
-    if (e.key.toLowerCase() === 's' && !e.ctrlKey && !e.metaKey) {
-        triggerFinalSurprise();
-    }
-    if (e.key.toLowerCase() === 'c' && !e.ctrlKey && !e.metaKey) {
-        if (typeof confetti !== 'undefined') {
-            confetti({ particleCount: 100, spread: 360, origin: { y: 0.6 } });
-        }
-    }
-});
+// ===== KEYBOARD SHORTCUTS DISABLED =====
+// Surprise only opens via button click, not keyboard
 
 // ===== TOUCH INTERACTIONS =====
 if ('ontouchstart' in window) {
@@ -1029,8 +988,4 @@ window.playSurpriseSound = playSurpriseSound;
 
 // ===== CONSOLE MESSAGES =====
 console.log('%c🎉 Happy Birthday! 🎉', 'font-size: 24px; color: #667eea; font-weight: bold;');
-console.log('%c✨ Keyboard Shortcuts:', 'font-size: 14px; color: #f093fb; font-weight: bold;');
-console.log('M - Toggle Music');
-console.log('S - Trigger Final Surprise');
-console.log('C - Trigger Confetti');
-console.log('↑↑↓↓←→←→BA - Secret Easter Egg!');
+console.log('%c✨ Click the Reveal Surprise button for the magic! ✨', 'font-size: 14px; color: #f093fb; font-weight: bold;');
