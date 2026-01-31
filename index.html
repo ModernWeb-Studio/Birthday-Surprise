@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy Birthday! | A Special Surprise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Comfortaa:wght@300;400;700&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <!-- Canvas for Confetti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Name Entry Screen (Signup-like) -->
+    <div id="name-entry-screen" class="name-entry-screen">
+        <div class="floating-particles">
+            <span class="particle">✨</span>
+            <span class="particle">🦋</span>
+            <span class="particle">💜</span>
+            <span class="particle">🌙</span>
+            <span class="particle">💫</span>
+            <span class="particle">🩷</span>
+            <span class="particle">✨</span>
+            <span class="particle">🪽</span>
+        </div>
+        <div class="name-entry-content">
+            <div class="entry-glow-orb"></div>
+            <div class="entry-icon">🎁</div>
+            <h1 class="entry-title">Oii Selfie!</h1>
+            <p class="entry-subtitle">someone made this just for you 💜</p>
+            <div class="name-input-wrapper">
+                <input type="text" id="birthday-name" class="name-input" placeholder="enter your name..." maxlength="20" autocomplete="off">
+                <span class="input-sparkle">✨</span>
+            </div>
+            <button class="entry-btn" onclick="submitName()">
+                <span>unwrap my surprise</span>
+                <span class="btn-emoji">🦋</span>
+            </button>
+            <p class="entry-hint">psst... something magical awaits 🌙</p>
+        </div>
+    </div>
+
+    <!-- Loading/Intro Screen -->
+    <div id="intro-screen" class="intro-screen" style="display: none;">
+        <div class="intro-content">
+            <div class="intro-emoji">🦋</div>
+            <div class="intro-text">something special is loading...</div>
+            <div class="intro-subtext">just for <span id="loading-name">you</span> 💜</div>
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div id="main-content" class="main-content" style="display: none;">
+
+        <!-- 🎂 Hero Section - Birthday Message -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-sparkle-text">~ it's your special day ~</div>
+                <h1 class="hero-title">HAPPY BIRTHDAY <span id="hero-name"></span>!</h1>
+                <p class="hero-subtitle handwriting">to the person who makes everything better ✨</p>
+                <div class="emoji-rain">
+                    <span class="falling-emoji">🦋</span>
+                    <span class="falling-emoji">🌙</span>
+                    <span class="falling-emoji">💫</span>
+                    <span class="falling-emoji">🪽</span>
+                    <span class="falling-emoji">🩷</span>
+                    <span class="falling-emoji">✨</span>
+                </div>
+                <div class="hero-message">
+                    <p id="personalized-message">"You're the reason someone believes in magic" 💜</p>
+                </div>
+                <div class="hero-sub-quote">
+                    <span class="typing-text">scroll down for surprises made just for you...</span>
+                </div>
+                <button class="cta-button glow-button" onclick="scrollToSection('quotes')">
+                    Begin The Journey 🦋
+                </button>
+            </div>
+            <div class="floating-shapes">
+                <div class="shape shape-1">💜</div>
+                <div class="shape shape-2">🦋</div>
+                <div class="shape shape-3">✨</div>
+                <div class="shape shape-4">🌙</div>
+                <div class="shape shape-5">💫</div>
+            </div>
+            <div class="hero-gradient-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+            </div>
+        </section>
+
+        <!-- 📸 Memories Section - Photo Gallery -->
+        <section class="memories" id="memories">
+            <h2 class="section-title">📸 Our Precious Memories</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Assets/1.png" alt="Memory 1">
+                    </div>
+                    <div class="gallery-caption">First moment together 💜</div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Assets/2.png" alt="Memory 2">
+                    </div>
+                    <div class="gallery-caption">When you made us laugh 🦋</div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Assets/3.png" alt="Memory 3">
+                    </div>
+                    <div class="gallery-caption">Beautiful moments shared ✨</div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Assets/4.png" alt="Memory 4">
+                    </div>
+                    <div class="gallery-caption">Pure joy & happiness 🌙</div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Assets/5.png" alt="Memory 5">
+                    </div>
+                    <div class="gallery-caption">Unforgettable moments 💫</div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Assets/6.png" alt="Memory 6">
+                    </div>
+                    <div class="gallery-caption">You make everything magical 🩷</div>
+                </div>
+            </div>
+            <button class="nav-btn" onclick="scrollToSection('video-section')">
+                Watch Special Video 🎥
+            </button>
+        </section>
+
+        <!-- 🎥 Video Section -->
+        <section class="video-section" id="video-section">
+            <h2 class="section-title">🎥 A Special Video For You</h2>
+            <div class="video-container">
+                <div class="youtube-embed-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/UT8ynEoBf_s?rel=0&modestbranding=1"
+                        width="315"
+                        height="560"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <p class="video-subtitle">made with love, just for you 💜</p>
+            <button class="nav-btn" onclick="scrollToSection('wishes')">
+                Unlock Secret Wishes 💌
+            </button>
+        </section>
+
+        <!-- 💫 Emotional Quotes Section -->
+        <section class="quotes-section" id="quotes">
+            <h2 class="section-title">💫 Words From The Heart</h2>
+            <div class="quotes-carousel">
+                <div class="quote-card active">
+                    <div class="quote-icon">🦋</div>
+                    <p class="quote-text">"In a world full of ordinary, you're my extraordinary"</p>
+                    <span class="quote-heart">💜</span>
+                </div>
+                <div class="quote-card">
+                    <div class="quote-icon">🌙</div>
+                    <p class="quote-text">"You're not just a chapter in my story, you're the whole book"</p>
+                    <span class="quote-heart">💗</span>
+                </div>
+                <div class="quote-card">
+                    <div class="quote-icon">✨</div>
+                    <p class="quote-text">"The day you were born, the universe smiled"</p>
+                    <span class="quote-heart">🩷</span>
+                </div>
+                <div class="quote-card">
+                    <div class="quote-icon">🌸</div>
+                    <p class="quote-text">"Some souls just understand each other upon meeting - that's us"</p>
+                    <span class="quote-heart">💕</span>
+                </div>
+            </div>
+            <div class="quote-dots">
+                <span class="dot active" onclick="showQuote(0)"></span>
+                <span class="dot" onclick="showQuote(1)"></span>
+                <span class="dot" onclick="showQuote(2)"></span>
+                <span class="dot" onclick="showQuote(3)"></span>
+            </div>
+            <button class="nav-btn" onclick="scrollToSection('memories')">
+                See Our Memories 📸
+            </button>
+        </section>
+
+        <!-- 💌 Secret Wishes Section -->
+        <section class="wishes" id="wishes">
+            <h2 class="section-title">💌 Secret Birthday Wishes</h2>
+            <p class="wishes-subtitle">tap each card to unlock a heartfelt message just for you ✨</p>
+
+            <div class="wishes-grid">
+                <div class="wish-card" onclick="toggleWish(this)">
+                    <div class="wish-front">
+                        <span class="wish-emoji">🥹</span>
+                        <p class="wish-label">tap me Selfie...</p>
+                    </div>
+                    <div class="wish-back">
+                        <p class="wish-message">"You're not just special to me—you're irreplaceable. The world is brighter because you exist in it. Never forget that. 🤍"</p>
+                    </div>
+                </div>
+
+                <div class="wish-card" onclick="toggleWish(this)">
+                    <div class="wish-front">
+                        <span class="wish-emoji">🦋</span>
+                        <p class="wish-label">something sweet...</p>
+                    </div>
+                    <div class="wish-back">
+                        <p class="wish-message">"You walked into my life and suddenly all the pieces made sense. Thank you for being you—perfectly, beautifully you. 💜"</p>
+                    </div>
+                </div>
+
+                <div class="wish-card" onclick="toggleWish(this)">
+                    <div class="wish-front">
+                        <span class="wish-emoji">🌙</span>
+                        <p class="wish-label">a little secret...</p>
+                    </div>
+                    <div class="wish-back">
+                        <p class="wish-message">"If I could gift you anything, I'd give you the ability to see yourself through my eyes. Then you'd know how truly amazing you are. ✨"</p>
+                    </div>
+                </div>
+
+                <div class="wish-card" onclick="toggleWish(this)">
+                    <div class="wish-front">
+                        <span class="wish-emoji">🎀</span>
+                        <p class="wish-label">open this one...</p>
+                    </div>
+                    <div class="wish-back">
+                        <p class="wish-message">"Some people make the world more beautiful just by being in it. You're one of them. Happy birthday to my favorite human! 🩷"</p>
+                    </div>
+                </div>
+
+                <div class="wish-card" onclick="toggleWish(this)">
+                    <div class="wish-front">
+                        <span class="wish-emoji">💫</span>
+                        <p class="wish-label">just for you...</p>
+                    </div>
+                    <div class="wish-back">
+                        <p class="wish-message">"You deserve a love that feels like coming home, dreams that take your breath away, and a birthday as magical as you are. 🌈"</p>
+                    </div>
+                </div>
+
+                <div class="wish-card" onclick="toggleWish(this)">
+                    <div class="wish-front">
+                        <span class="wish-emoji">🪽</span>
+                        <p class="wish-label">one more...</p>
+                    </div>
+                    <div class="wish-back">
+                        <p class="wish-message">"This isn't just a birthday wish—it's a promise. I'll always be here, cheering for you, believing in you, loving you. Forever & always. 💕"</p>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-btn" onclick="scrollToSection('final-surprise')">
+                Your Grand Finale 🎁
+            </button>
+        </section>
+
+        <!-- 🎁 Final Surprise Section -->
+        <section class="final-surprise" id="final-surprise">
+            <h2 class="section-title">🎁 Your Grand Finale</h2>
+
+            <div class="surprise-content">
+                <div class="countdown-box">
+                    <p class="countdown-label">Moments until the surprise reveal:</p>
+                    <div class="countdown-timer">
+                        <div class="timer-digit">
+                            <span id="days">0</span>
+                            <p>Days</p>
+                        </div>
+                        <div class="timer-digit">
+                            <span id="hours">0</span>
+                            <p>Hours</p>
+                        </div>
+                        <div class="timer-digit">
+                            <span id="minutes">0</span>
+                            <p>Minutes</p>
+                        </div>
+                        <div class="timer-digit">
+                            <span id="seconds">0</span>
+                            <p>Seconds</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="surprise-message">
+                    <p class="surprise-text">The biggest surprise is yet to come...</p>
+                </div>
+
+                <button class="cta-button glow-button surprise-button" onclick="triggerFinalSurprise()">
+                    🎊 REVEAL SURPRISE 🎊
+                </button>
+            </div>
+        </section>
+
+        <!-- Floating Music Note -->
+        <button id="music-toggle" class="music-button" onclick="toggleMusic()">
+            <span class="music-icon">🎵</span>
+        </button>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">Made with 💝 just for you. Happy Birthday! 🎉</p>
+            <p class="footer-date" id="footer-date"></p>
+            <div class="footer-brand">
+                <span class="brand-icon">🌐</span>
+                <span class="brand-name">ModernWebstudio</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Background Music Audio Element -->
+    <!-- Songs play in sequence: song1 → song2 → song3 → song1... (automatic loop) -->
+    <!-- Add your songs to Assets folder: birthday-music.mp3, song2.mp3, song3.mp3 -->
+    <audio id="bg-music" preload="auto">
+        <source src="Assets/birthday-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Surprise Reveal Sound Effect -->
+    <!-- Download from: https://youtube.com/shorts/fP8PbMG16tE and save as Assets/surprise-sound.mp3 -->
+    <audio id="surprise-sound" preload="auto">
+        <source src="Assets/surprise-sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+========================================
+   HOW TO SHARE YOUR BIRTHDAY WEBSITE
+   (Without Hosting)
+========================================
+
+OPTION 1: SHARE VIA GOOGLE DRIVE / ONEDRIVE / DROPBOX
+------------------------------------------------------
+1. ZIP the entire "Birthday" folder
+   - Right-click the folder → "Compress to ZIP file"
+
+2. Upload the ZIP to:
+   - Google Drive: drive.google.com
+   - OneDrive: onedrive.com
+   - Dropbox: dropbox.com
+
+3. Get shareable link:
+   - Right-click the ZIP file → "Get link" / "Share"
+   - Set to "Anyone with link can view"
+   - Copy the link
+
+4. Send the link to your customer!
+
+5. Customer instructions:
+   - Download the ZIP
+   - Extract/Unzip the folder
+   - Open "index.html" in browser (Chrome/Edge/Firefox)
+
+
+OPTION 2: SHARE VIA WHATSAPP / TELEGRAM
+---------------------------------------
+1. ZIP the entire "Birthday" folder
+2. Send the ZIP file directly in chat
+3. Customer downloads, extracts, opens index.html
+
+
+OPTION 3: SHARE VIA EMAIL
+-------------------------
+1. ZIP the entire "Birthday" folder
+2. Attach ZIP to email (if under 25MB)
+3. Or upload to Google Drive and share link in email
+
+
+========================================
+   IMPORTANT: FILES TO INCLUDE
+========================================
+
+Make sure your ZIP contains:
+✓ index.html
+✓ styles.css
+✓ script.js
+✓ Assets/ folder with:
+  - 1.png to 6.png (photos)
+  - birthday-music.mp3
+  - song2.mp3
+  - song3.mp3
+  - surprise-sound.mp3
+
+
+========================================
+   MESSAGE TEMPLATE FOR CUSTOMERS
+========================================
+
+Copy-paste this message:
+
+"🎁 Here's your Birthday Surprise Website!
+
+📥 Download: [YOUR LINK HERE]
+
+📋 Instructions:
+1. Download and extract the ZIP file
+2. Open the 'Birthday' folder
+3. Double-click 'index.html' to open in browser
+4. Enjoy the surprise! 🎉
+
+💜 Made with love!"
+
+
+========================================
+   CUSTOMIZE FOR EACH CUSTOMER
+========================================
+
+Before sharing, customize these in index.html:
+- Line 38: Change "Oii Selfie!" to customer's name
+- Line 218: Change "tap me Selfie..." to their name
+- Add their photos in Assets folder (1.png to 6.png)
+- Add their songs in Assets folder
+
+
+========================================
