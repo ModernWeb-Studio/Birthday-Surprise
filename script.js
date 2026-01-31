@@ -429,13 +429,40 @@ function playSurpriseSound() {
     }
 }
 
+// Stop surprise sound
+function stopSurpriseSound() {
+    const surpriseAudio = document.getElementById('surprise-sound');
+    if (surpriseAudio) {
+        surpriseAudio.pause();
+        surpriseAudio.currentTime = 0;
+    }
+}
+
+// Close celebration and resume background music
+function closeCelebration() {
+    // Stop surprise sound
+    stopSurpriseSound();
+
+    // Remove the celebration popup
+    const celebrationMsg = document.querySelector('.celebration-message');
+    if (celebrationMsg) {
+        celebrationMsg.remove();
+    }
+
+    // Resume background music
+    autoPlayBackgroundMusic();
+}
+
+window.closeCelebration = closeCelebration;
+window.stopSurpriseSound = stopSurpriseSound;
+
 function showCelebrationMessage() {
     const name = birthdayPersonName || 'Selfie';
     const message = document.createElement('div');
     message.className = 'celebration-message';
     message.innerHTML = `
         <div class="celebration-content">
-            <button class="close-celebration" onclick="this.parentElement.parentElement.remove()">✕</button>
+            <button class="close-celebration" onclick="closeCelebration()">✕</button>
             <div class="floating-popup-emojis">
                 <span class="float-emoji">✨</span>
                 <span class="float-emoji">🦋</span>
@@ -570,6 +597,9 @@ function showEmotionalSurprise() {
 
 // Close surprise popup
 function closeSurpriseWithVoice() {
+    // Stop surprise sound
+    stopSurpriseSound();
+
     const overlay = document.querySelector('.emotional-surprise-overlay');
     if (overlay) overlay.remove();
 
