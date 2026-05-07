@@ -1,352 +1,1037 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 Happy Birthday! | A Special Surprise</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Comfortaa:wght@300;400;700&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Samuel Weds Ranjani | Wedding Invitation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* ── COUNTDOWN TIMER ── */
+    .countdown-wrap {
+        text-align: center;
+        padding: 48px 20px 36px;
+        position: relative;
+    }
+    .countdown-label {
+        font-family: 'Great Vibes', cursive;
+        font-size: 2rem;
+        color: #c2185b;
+        margin: 0 0 32px;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 8px rgba(194,24,91,.18);
+    }
+    .countdown-boxes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: nowrap;
+    }
+    .cd-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    .cd-ring {
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+    .cd-svg {
+        width: 80px;
+        height: 80px;
+        transform: rotate(-90deg);
+    }
+    .cd-track {
+        fill: none;
+        stroke: rgba(194,24,91,.15);
+        stroke-width: 5;
+    }
+    .cd-fill {
+        fill: none;
+        stroke: #c2185b;
+        stroke-width: 5;
+        stroke-linecap: round;
+        stroke-dasharray: 213.6;
+        stroke-dashoffset: 213.6;
+        transition: stroke-dashoffset 0.8s cubic-bezier(.4,0,.2,1);
+        filter: drop-shadow(0 0 6px rgba(194,24,91,.55));
+    }
+    .cd-num {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.55rem;
+        font-weight: 700;
+        color: #a01040;
+        letter-spacing: 1px;
+    }
+    .cd-unit {
+        font-family: 'Montserrat', sans-serif;
+        font-size: .62rem;
+        font-weight: 600;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #c2185b;
+        opacity: .75;
+    }
+    .cd-sep {
+        font-size: 1.1rem;
+        color: #e91e63;
+        opacity: .5;
+        margin-bottom: 28px;
+        animation: cdPulse 1.4s ease-in-out infinite;
+    }
+    @keyframes cdPulse {
+        0%,100% { transform: scale(1);   opacity: .5; }
+        50%      { transform: scale(1.4); opacity: .9; }
+    }
+    /* Progress bar */
+    .cd-progress-wrap {
+        margin: 28px auto 0;
+        max-width: 320px;
+        height: 5px;
+        background: rgba(194,24,91,.15);
+        border-radius: 99px;
+        overflow: hidden;
+        position: relative;
+    }
+    .cd-progress-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #e91e63, #D4AF37, #e91e63);
+        background-size: 200% 100%;
+        border-radius: 99px;
+        transition: width 1s ease;
+        animation: cdBarShimmer 2.5s linear infinite;
+    }
+    @keyframes cdBarShimmer {
+        0%   { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+    }
+    .cd-date-tag {
+        font-family: 'Montserrat', sans-serif;
+        font-size: .7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(160,16,64,.6);
+        margin: 14px 0 0;
+    }
+    @media (max-width: 480px) {
+        .countdown-label { font-size: 1.5rem; }
+        .cd-ring { width: 64px; height: 64px; }
+        .cd-svg  { width: 64px; height: 64px; }
+        .cd-num  { font-size: 1.2rem; }
+        .countdown-boxes { gap: 4px; }
+    }
+
+    /* ── 320–425px: shrink rings so all 4 fit in one row ── */
+    @media (min-width: 320px) and (max-width: 425px) {
+        .countdown-wrap { padding: 32px 8px 24px; }
+        .countdown-label { font-size: 1.25rem; }
+        .countdown-boxes { gap: 2px; flex-wrap: nowrap; }
+        .cd-ring { width: 52px; height: 52px; }
+        .cd-svg  { width: 52px; height: 52px; }
+        .cd-num  { font-size: 0.95rem; }
+        .cd-unit { font-size: 0.5rem; letter-spacing: 1.5px; }
+        .cd-sep  { font-size: 0.7rem; margin-bottom: 22px; }
+    }
+
+    /* ── below 360px: even tighter ── */
+    @media (max-width: 360px) {
+        .countdown-boxes { gap: 1px; }
+        .cd-ring { width: 46px; height: 46px; }
+        .cd-svg  { width: 46px; height: 46px; }
+        .cd-num  { font-size: 0.85rem; }
+        .cd-unit { font-size: 0.45rem; letter-spacing: 1px; }
+        .cd-sep  { font-size: 0.6rem; margin-bottom: 18px; }
+    }
+
+    /* ── occasion text color ── */
+    .occ-txt {
+        color: #c2185b !important;
+        text-shadow: 0 2px 10px rgba(194,24,91,.2) !important;
+    }
+
+    /* ── photo + names block ── */
+    .ft-photo-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+    }
+    .ft-photo-block .ft-couple {
+        position: relative !important;
+        margin-bottom: 0 !important;
+        width: 290px !important;
+        height: auto !important;
+        max-width: 90vw;
+        overflow: visible !important;
+    }
+    .ft-photo-block .ft-couple img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        border-radius: 12px;
+        position: static !important;
+    }
+    @media (max-width: 425px) {
+        .ft-photo-block .ft-couple {
+            width: 220px !important;
+            height: auto !important;
+        }
+    }
+    @media (max-width: 375px) {
+        .ft-photo-block .ft-couple {
+            width: 200px !important;
+            height: auto !important;
+        }
+    }
+    @media (max-width: 320px) {
+        .ft-photo-block .ft-couple {
+            width: 180px !important;
+            height: auto !important;
+        }
+    }
+
+    /* Name & year — fully independent classes, no conflict */
+    .couple-name-tag {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-family: 'Great Vibes', cursive;
+        font-size: 2rem;
+        color: #880E4F;
+        text-align: center;
+        margin: 14px 0 0;
+        padding: 0;
+        position: static !important;
+        line-height: 1.2;
+        width: 100%;
+    }
+    .couple-year-tag {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.85rem;
+        color: rgba(136,14,79,.55);
+        letter-spacing: 5px;
+        text-align: center;
+        margin: 6px 0 0;
+        padding: 0;
+        position: static !important;
+        width: 100%;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+        .couple-name-tag { font-size: 1.6rem; margin-top: 12px !important; }
+        .couple-year-tag { font-size: 0.75rem; letter-spacing: 3px; }
+    }
+    @media (max-width: 375px) {
+        .couple-name-tag { font-size: 1.4rem; margin-top: 10px !important; }
+        .couple-year-tag { font-size: 0.7rem; letter-spacing: 2px; }
+    }
+    @media (max-width: 320px) {
+        .couple-name-tag { font-size: 1.25rem; margin-top: 8px !important; }
+        .couple-year-tag { font-size: 0.65rem; letter-spacing: 2px; }
+    }
+    </style>
+    <!-- GSAP for Premium Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
+
 <body>
-    <!-- Animated Background -->
-    <div class="background-animation">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-    </div>
 
-    <!-- Canvas for Confetti -->
-    <canvas id="confetti-canvas"></canvas>
-
-    <!-- Name Entry Screen (Signup-like) -->
-    <div id="name-entry-screen" class="name-entry-screen">
-        <div class="floating-particles">
-            <span class="particle">✨</span>
-            <span class="particle">🦋</span>
-            <span class="particle">💜</span>
-            <span class="particle">🌙</span>
-            <span class="particle">💫</span>
-            <span class="particle">🩷</span>
-            <span class="particle">✨</span>
-            <span class="particle">🪽</span>
+    <!-- ============================================================
+     INTRO DOOR OVERLAY
+     ============================================================ -->
+    <div id="intro-overlay">
+        <div class="door door-left">
+            <div class="door-corner tl"></div>
+            <div class="door-corner bl"></div>
+            <div class="door-stripe"></div>
         </div>
-        <div class="name-entry-content">
-            <div class="entry-glow-orb"></div>
-            <div class="entry-icon">🎁</div>
-            <h1 class="entry-title">Oii Selfie!</h1>
-            <p class="entry-subtitle">someone made this just for you 💜</p>
-            <div class="name-input-wrapper">
-                <input type="text" id="birthday-name" class="name-input" placeholder="enter your name..." maxlength="20" autocomplete="off">
-                <span class="input-sparkle">✨</span>
-            </div>
-            <button class="entry-btn" onclick="submitName()">
-                <span>unwrap my surprise</span>
-                <span class="btn-emoji">🦋</span>
+        <div class="door door-right">
+            <div class="door-corner tr"></div>
+            <div class="door-corner br"></div>
+            <div class="door-stripe"></div>
+        </div>
+        <canvas id="introCanvas"></canvas>
+        <div class="door-center">
+            <div class="dc-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+            <p class="dc-names">Samuel <em>&amp;</em> Ranjani</p>
+            <div class="dc-divider"><span></span><i>♥</i><span></span></div>
+            <p class="dc-tag">Wedding Invitation</p>
+            <p class="dc-date">28th May 2026 · Thanjavur</p>
+            <button id="openDoorBtn">
+                <span class="btn-shine"></span>
+                ✦ &nbsp;Open Invitation&nbsp; ✦
             </button>
-            <p class="entry-hint">psst... something magical awaits 🌙</p>
+            <p class="dc-hint">tap to reveal your invitation</p>
+        </div>
+        <audio id="weddingMusic" src="assets/wedding_music.mp3" loop preload="auto"></audio>
+    </div>
+
+    <!-- CUSTOM SPARKLE CURSOR -->
+    <div id="cursorSparkle" class="sparkle-container"></div>
+
+    <!-- GLOBAL FLOATING CAMERA (Guides the whole scroll) -->
+    <div class="global-camera-wrap" id="globalCamera"></div>
+
+    <!-- ============================================================
+     SECTION 1: HERO + TEMPLE (ONE continuous tall scroll)
+     Sky blue top → Names → Temple/Mandapam scrolls into view
+     ============================================================ -->
+    <section class="sec-hero-temple">
+        <!-- Hanging Diyas -->
+        <div class="diyas-fixed">
+            <img src="assets/diya.svg" class="diya" style="left:3%;height:140px;animation-delay:0s">
+            <img src="assets/diya.svg" class="diya" style="left:13%;height:175px;animation-delay:.4s">
+            <img src="assets/diya.svg" class="diya" style="left:23%;height:110px;animation-delay:.8s">
+            <img src="assets/diya.svg" class="diya" style="left:33%;height:160px;animation-delay:.2s">
+            <img src="assets/diya.svg" class="diya" style="left:45%;height:120px;animation-delay:.6s">
+            <img src="assets/diya.svg" class="diya" style="left:56%;height:170px;animation-delay:.3s">
+            <img src="assets/diya.svg" class="diya" style="left:66%;height:105px;animation-delay:.7s">
+            <img src="assets/diya.svg" class="diya" style="left:76%;height:155px;animation-delay:.1s">
+            <img src="assets/diya.svg" class="diya" style="left:86%;height:125px;animation-delay:.5s">
+            <img src="assets/diya.svg" class="diya" style="left:95%;height:148px;animation-delay:.9s">
+        </div>
+
+        <!-- Sky Blue Zone with Names + small kovil at bottom -->
+        <div class="sky-zone">
+            <div class="hero-names">
+                <h1 class="hname anim-fade" style="animation-delay:.2s">Samuel</h1>
+                <p class="hweds anim-fade" style="animation-delay:.6s">weds</p>
+                <h1 class="hname anim-fade" style="animation-delay:1s">Ranjani</h1>
+            </div>
+            <!-- Scroll indicator -->
+            <div class="scroll-hint">
+                <span class="scroll-dot"></span>
+                <span class="scroll-text">Scroll to explore</span>
+                <span class="scroll-arrow">&#8964;</span>
+            </div>
+        </div>
+
+
+    </section>
+
+    </section>
+
+    <!-- ============================================================
+     COUPLE REVEAL — 300vh scroll track, sticky panel inside
+     ============================================================ -->
+    <div class="hall-zone" id="hallZone">
+        <div class="hall-sticky" id="hallFixed">
+            <!-- New Garlanded Couple Image -->
+            <img src="assets/hero_scene_malai.png" class="hall-img" id="hallImg" alt="Samuel & Ranjani">
+            <div class="hall-tag" id="hallTag1">Together Forever</div>
+            <div class="hall-caption-full" id="hallCaption">
+                <p class="hc-sub">Introducing the Bride & Groom</p>
+                <h2 class="hc-name">Samuel &amp; Ranjani</h2>
+                <p class="hc-loc">The Start of Our Forever</p>
+            </div>
+            <div class="hall-blend" id="hallBlend"></div>
+            <div class="hall-vignette"></div>
         </div>
     </div>
 
-    <!-- Loading/Intro Screen -->
-    <div id="intro-screen" class="intro-screen" style="display: none;">
-        <div class="intro-content">
-            <div class="intro-emoji">🦋</div>
-            <div class="intro-text">something special is loading...</div>
-            <div class="intro-subtext">just for <span id="loading-name">you</span> 💜</div>
-            <div class="loader"></div>
+
+
+    <!-- ============================================================
+     SECTION 5: GROOM AND BRIDE — Golden
+     ============================================================ -->
+    <section class="sec-couple">
+        <!-- Nature-based floating petals: cherry blossom, rose, jasmine, marigold -->
+        <div class="petal"
+            style="width:18px;height:11px;background:rgba(255,183,197,0.82);left:6%;animation-duration:8s;animation-delay:0s;transform:rotate(30deg)">
         </div>
-    </div>
+        <div class="petal"
+            style="width:14px;height:9px; background:rgba(255,100,130,0.70);left:15%;animation-duration:10s;animation-delay:1.8s;transform:rotate(-20deg)">
+        </div>
+        <div class="petal"
+            style="width:20px;height:13px;background:rgba(255,220,100,0.75);left:27%;animation-duration:9s;animation-delay:3.2s;transform:rotate(55deg)">
+        </div>
+        <div class="petal"
+            style="width:15px;height:10px;background:rgba(255,183,197,0.80);left:38%;animation-duration:11s;animation-delay:0.5s;transform:rotate(-40deg)">
+        </div>
+        <div class="petal"
+            style="width:16px;height:10px;background:rgba(232,90,120,0.65);left:50%;animation-duration:7.5s;animation-delay:2.6s;transform:rotate(70deg)">
+        </div>
+        <div class="petal"
+            style="width:12px;height:8px; background:rgba(255,240,180,0.80);left:61%;animation-duration:12s;animation-delay:4.5s;transform:rotate(-15deg)">
+        </div>
+        <div class="petal"
+            style="width:19px;height:12px;background:rgba(255,140,160,0.72);left:72%;animation-duration:8.5s;animation-delay:1.2s;transform:rotate(45deg)">
+        </div>
+        <div class="petal"
+            style="width:13px;height:9px; background:rgba(255,210,90,0.70); left:83%;animation-duration:9.5s;animation-delay:3.8s;transform:rotate(-60deg)">
+        </div>
+        <div class="petal"
+            style="width:17px;height:11px;background:rgba(255,183,197,0.75);left:91%;animation-duration:10.5s;animation-delay:0.9s;transform:rotate(25deg)">
+        </div>
+        <div class="petal"
+            style="width:14px;height:9px; background:rgba(220,60,100,0.65); left:44%;animation-duration:13s;animation-delay:6.5s;transform:rotate(-50deg)">
+        </div>
+        <div class="petal"
+            style="width:16px;height:10px;background:rgba(255,230,120,0.78);left:20%;animation-duration:9s;animation-delay:5.2s;transform:rotate(80deg)">
+        </div>
+        <div class="petal"
+            style="width:13px;height:8px; background:rgba(255,160,180,0.70);left:56%;animation-duration:11.5s;animation-delay:7s;transform:rotate(-35deg)">
+        </div>
 
-    <!-- Main Content Container -->
-    <div id="main-content" class="main-content" style="display: none;">
+        <!-- Corner flower clusters (inline SVG) -->
+        <svg class="flower-corner tl" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.9">
+                <!-- large rose -->
+                <circle cx="40" cy="40" r="22" fill="#c8185a" opacity=".9" />
+                <circle cx="40" cy="40" r="14" fill="#e91e63" />
+                <circle cx="40" cy="40" r="7" fill="#f8a" />
+                <!-- petals -->
+                <ellipse cx="40" cy="18" rx="7" ry="12" fill="#c8185a" opacity=".7" />
+                <ellipse cx="40" cy="62" rx="7" ry="12" fill="#c8185a" opacity=".7" />
+                <ellipse cx="18" cy="40" rx="12" ry="7" fill="#c8185a" opacity=".7" />
+                <ellipse cx="62" cy="40" rx="12" ry="7" fill="#c8185a" opacity=".7" />
+                <!-- small flower -->
+                <circle cx="80" cy="25" r="13" fill="#D4AF37" opacity=".85" />
+                <circle cx="80" cy="25" r="7" fill="#fff5c0" />
+                <ellipse cx="80" cy="12" rx="5" ry="8" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="80" cy="38" rx="5" ry="8" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="67" cy="25" rx="8" ry="5" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="93" cy="25" rx="8" ry="5" fill="#D4AF37" opacity=".7" />
+                <!-- bud -->
+                <circle cx="28" cy="82" r="9" fill="#ff6b8a" opacity=".8" />
+                <circle cx="28" cy="82" r="5" fill="#ffb3c6" />
+                <!-- leaves/vines -->
+                <path d="M10,10 Q50,30 90,10" stroke="#2d7a3a" stroke-width="2.5" fill="none" opacity=".7" />
+                <path d="M10,10 Q20,60 10,100" stroke="#2d7a3a" stroke-width="2.5" fill="none" opacity=".7" />
+                <ellipse cx="55" cy="22" rx="9" ry="5" fill="#3a9b4a" opacity=".6" transform="rotate(-30 55 22)" />
+                <ellipse cx="18" cy="58" rx="9" ry="5" fill="#3a9b4a" opacity=".6" transform="rotate(60 18 58)" />
+                <!-- gold dots -->
+                <circle cx="65" cy="60" r="3" fill="#D4AF37" opacity=".8" />
+                <circle cx="50" cy="75" r="2.5" fill="#D4AF37" opacity=".7" />
+                <circle cx="75" cy="70" r="2" fill="#D4AF37" opacity=".6" />
+            </g>
+        </svg>
+        <svg class="flower-corner tr" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.9">
+                <circle cx="40" cy="40" r="22" fill="#c8185a" opacity=".9" />
+                <circle cx="40" cy="40" r="14" fill="#e91e63" />
+                <circle cx="40" cy="40" r="7" fill="#f8a" />
+                <ellipse cx="40" cy="18" rx="7" ry="12" fill="#c8185a" opacity=".7" />
+                <ellipse cx="40" cy="62" rx="7" ry="12" fill="#c8185a" opacity=".7" />
+                <ellipse cx="18" cy="40" rx="12" ry="7" fill="#c8185a" opacity=".7" />
+                <ellipse cx="62" cy="40" rx="12" ry="7" fill="#c8185a" opacity=".7" />
+                <circle cx="80" cy="25" r="13" fill="#D4AF37" opacity=".85" />
+                <circle cx="80" cy="25" r="7" fill="#fff5c0" />
+                <ellipse cx="80" cy="12" rx="5" ry="8" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="80" cy="38" rx="5" ry="8" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="67" cy="25" rx="8" ry="5" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="93" cy="25" rx="8" ry="5" fill="#D4AF37" opacity=".7" />
+                <circle cx="28" cy="82" r="9" fill="#ff6b8a" opacity=".8" />
+                <circle cx="28" cy="82" r="5" fill="#ffb3c6" />
+                <path d="M10,10 Q50,30 90,10" stroke="#2d7a3a" stroke-width="2.5" fill="none" opacity=".7" />
+                <path d="M10,10 Q20,60 10,100" stroke="#2d7a3a" stroke-width="2.5" fill="none" opacity=".7" />
+                <ellipse cx="55" cy="22" rx="9" ry="5" fill="#3a9b4a" opacity=".6" transform="rotate(-30 55 22)" />
+                <ellipse cx="18" cy="58" rx="9" ry="5" fill="#3a9b4a" opacity=".6" transform="rotate(60 18 58)" />
+                <circle cx="65" cy="60" r="3" fill="#D4AF37" opacity=".8" />
+                <circle cx="50" cy="75" r="2.5" fill="#D4AF37" opacity=".7" />
+                <circle cx="75" cy="70" r="2" fill="#D4AF37" opacity=".6" />
+            </g>
+        </svg>
+        <svg class="flower-corner bl" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.9">
+                <circle cx="40" cy="40" r="22" fill="#c8185a" opacity=".9" />
+                <circle cx="40" cy="40" r="14" fill="#e91e63" />
+                <circle cx="40" cy="40" r="7" fill="#f8a" />
+                <ellipse cx="40" cy="18" rx="7" ry="12" fill="#c8185a" opacity=".7" />
+                <ellipse cx="40" cy="62" rx="7" ry="12" fill="#c8185a" opacity=".7" />
+                <ellipse cx="18" cy="40" rx="12" ry="7" fill="#c8185a" opacity=".7" />
+                <ellipse cx="62" cy="40" rx="12" ry="7" fill="#c8185a" opacity=".7" />
+                <circle cx="80" cy="25" r="13" fill="#D4AF37" opacity=".85" />
+                <circle cx="80" cy="25" r="7" fill="#fff5c0" />
+                <ellipse cx="80" cy="12" rx="5" ry="8" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="80" cy="38" rx="5" ry="8" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="67" cy="25" rx="8" ry="5" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="93" cy="25" rx="8" ry="5" fill="#D4AF37" opacity=".7" />
+                <circle cx="28" cy="82" r="9" fill="#ff6b8a" opacity=".8" />
+                <circle cx="28" cy="82" r="5" fill="#ffb3c6" />
+                <path d="M10,10 Q50,30 90,10" stroke="#2d7a3a" stroke-width="2.5" fill="none" opacity=".7" />
+                <path d="M10,10 Q20,60 10,100" stroke="#2d7a3a" stroke-width="2.5" fill="none" opacity=".7" />
+                <ellipse cx="55" cy="22" rx="9" ry="5" fill="#3a9b4a" opacity=".6" transform="rotate(-30 55 22)" />
+                <ellipse cx="18" cy="58" rx="9" ry="5" fill="#3a9b4a" opacity=".6" transform="rotate(60 18 58)" />
+                <circle cx="65" cy="60" r="3" fill="#D4AF37" opacity=".8" />
+                <circle cx="50" cy="75" r="2.5" fill="#D4AF37" opacity=".7" />
+                <circle cx="75" cy="70" r="2" fill="#D4AF37" opacity=".6" />
+            </g>
+        </svg>
+        <svg class="flower-corner br" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.9">
+                <circle cx="40" cy="40" r="22" fill="#c8185a" opacity=".9" />
+                <circle cx="40" cy="40" r="14" fill="#e91e63" />
+                <circle cx="40" cy="40" r="7" fill="#f8a" />
+                <ellipse cx="40" cy="18" rx="7" ry="12" fill="#c8185a" opacity=".7" />
+                <ellipse cx="40" cy="62" rx="7" ry="12" fill="#c8185a" opacity=".7" />
+                <ellipse cx="18" cy="40" rx="12" ry="7" fill="#c8185a" opacity=".7" />
+                <ellipse cx="62" cy="40" rx="12" ry="7" fill="#c8185a" opacity=".7" />
+                <circle cx="80" cy="25" r="13" fill="#D4AF37" opacity=".85" />
+                <circle cx="80" cy="25" r="7" fill="#fff5c0" />
+                <ellipse cx="80" cy="12" rx="5" ry="8" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="80" cy="38" rx="5" ry="8" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="67" cy="25" rx="8" ry="5" fill="#D4AF37" opacity=".7" />
+                <ellipse cx="93" cy="25" rx="8" ry="5" fill="#D4AF37" opacity=".7" />
+                <circle cx="28" cy="82" r="9" fill="#ff6b8a" opacity=".8" />
+                <circle cx="28" cy="82" r="5" fill="#ffb3c6" />
+                <path d="M10,10 Q50,30 90,10" stroke="#2d7a3a" stroke-width="2.5" fill="none" opacity=".7" />
+                <path d="M10,10 Q20,60 10,100" stroke="#2d7a3a" stroke-width="2.5" fill="none" opacity=".7" />
+                <ellipse cx="55" cy="22" rx="9" ry="5" fill="#3a9b4a" opacity=".6" transform="rotate(-30 55 22)" />
+                <ellipse cx="18" cy="58" rx="9" ry="5" fill="#3a9b4a" opacity=".6" transform="rotate(60 18 58)" />
+                <circle cx="65" cy="60" r="3" fill="#D4AF37" opacity=".8" />
+                <circle cx="50" cy="75" r="2.5" fill="#D4AF37" opacity=".7" />
+                <circle cx="75" cy="70" r="2" fill="#D4AF37" opacity=".6" />
+            </g>
+        </svg>
 
-        <!-- 🎂 Hero Section - Birthday Message -->
-        <section class="hero" id="hero">
-            <div class="hero-content">
-                <div class="hero-sparkle-text">~ it's your special day ~</div>
-                <h1 class="hero-title">HAPPY BIRTHDAY <span id="hero-name"></span>!</h1>
-                <p class="hero-subtitle handwriting">to the person who makes everything better ✨</p>
-                <div class="emoji-rain">
-                    <span class="falling-emoji">🦋</span>
-                    <span class="falling-emoji">🌙</span>
-                    <span class="falling-emoji">💫</span>
-                    <span class="falling-emoji">🪽</span>
-                    <span class="falling-emoji">🩷</span>
-                    <span class="falling-emoji">✨</span>
+        <div class="cmandala TL"><img src="assets/mandala_corner.svg" alt=""></div>
+        <div class="cmandala TR"><img src="assets/mandala_corner.svg" alt=""></div>
+        <div class="couple-inner">
+            <p class="intro-lbl reveal-up">Introducing The</p>
+            <h2 class="gb-title anim-ls" id="gbTitle">
+                Groom and Bride
+            </h2>
+            <div class="cp-row">
+                <div class="cp-card reveal-left">
+                    <div class="cp-circle"><img src="assets/Groom original.png" alt="Samuel"></div>
+                    <div class="cp-init">S</div>
+                    <h3>Samuel</h3>
+                    <p>The Groom</p>
                 </div>
-                <div class="hero-message">
-                    <p id="personalized-message">"You're the reason someone believes in magic" 💜</p>
-                </div>
-                <div class="hero-sub-quote">
-                    <span class="typing-text">scroll down for surprises made just for you...</span>
-                </div>
-                <button class="cta-button glow-button" onclick="scrollToSection('quotes')">
-                    Begin The Journey 🦋
-                </button>
-            </div>
-            <div class="floating-shapes">
-                <div class="shape shape-1">💜</div>
-                <div class="shape shape-2">🦋</div>
-                <div class="shape shape-3">✨</div>
-                <div class="shape shape-4">🌙</div>
-                <div class="shape shape-5">💫</div>
-            </div>
-            <div class="hero-gradient-orbs">
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
-                <div class="orb orb-3"></div>
-            </div>
-        </section>
-
-        <!-- 📸 Memories Section - Photo Gallery -->
-        <section class="memories" id="memories">
-            <h2 class="section-title">📸 Our Precious Memories</h2>
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Assets/1.png" alt="Memory 1">
-                    </div>
-                    <div class="gallery-caption">First moment together 💜</div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Assets/2.png" alt="Memory 2">
-                    </div>
-                    <div class="gallery-caption">When you made us laugh 🦋</div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Assets/3.png" alt="Memory 3">
-                    </div>
-                    <div class="gallery-caption">Beautiful moments shared ✨</div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Assets/4.png" alt="Memory 4">
-                    </div>
-                    <div class="gallery-caption">Pure joy & happiness 🌙</div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Assets/5.png" alt="Memory 5">
-                    </div>
-                    <div class="gallery-caption">Unforgettable moments 💫</div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Assets/6.png" alt="Memory 6">
-                    </div>
-                    <div class="gallery-caption">You make everything magical 🩷</div>
-                </div>
-            </div>
-            <button class="nav-btn" onclick="scrollToSection('video-section')">
-                Watch Special Video 🎥
-            </button>
-        </section>
-
-        <!-- 🎥 Video Section -->
-        <section class="video-section" id="video-section">
-            <h2 class="section-title">🎥 A Special Video For You</h2>
-            <div class="video-container">
-                <div class="youtube-embed-wrapper">
-                    <iframe
-                        src="https://www.youtube.com/embed/UT8ynEoBf_s?rel=0&modestbranding=1"
-                        width="315"
-                        height="560"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-            <p class="video-subtitle">made with love, just for you 💜</p>
-            <button class="nav-btn" onclick="scrollToSection('wishes')">
-                Unlock Secret Wishes 💌
-            </button>
-        </section>
-
-        <!-- 💫 Emotional Quotes Section -->
-        <section class="quotes-section" id="quotes">
-            <h2 class="section-title">💫 Words From The Heart</h2>
-            <div class="quotes-carousel">
-                <div class="quote-card active">
-                    <div class="quote-icon">🦋</div>
-                    <p class="quote-text">"In a world full of ordinary, you're my extraordinary"</p>
-                    <span class="quote-heart">💜</span>
-                </div>
-                <div class="quote-card">
-                    <div class="quote-icon">🌙</div>
-                    <p class="quote-text">"You're not just a chapter in my story, you're the whole book"</p>
-                    <span class="quote-heart">💗</span>
-                </div>
-                <div class="quote-card">
-                    <div class="quote-icon">✨</div>
-                    <p class="quote-text">"The day you were born, the universe smiled"</p>
-                    <span class="quote-heart">🩷</span>
-                </div>
-                <div class="quote-card">
-                    <div class="quote-icon">🌸</div>
-                    <p class="quote-text">"Some souls just understand each other upon meeting - that's us"</p>
-                    <span class="quote-heart">💕</span>
-                </div>
-            </div>
-            <div class="quote-dots">
-                <span class="dot active" onclick="showQuote(0)"></span>
-                <span class="dot" onclick="showQuote(1)"></span>
-                <span class="dot" onclick="showQuote(2)"></span>
-                <span class="dot" onclick="showQuote(3)"></span>
-            </div>
-            <button class="nav-btn" onclick="scrollToSection('memories')">
-                See Our Memories 📸
-            </button>
-        </section>
-
-        <!-- 💌 Secret Wishes Section -->
-        <section class="wishes" id="wishes">
-            <h2 class="section-title">💌 Secret Birthday Wishes</h2>
-            <p class="wishes-subtitle">tap each card to unlock a heartfelt message just for you ✨</p>
-
-            <div class="wishes-grid">
-                <div class="wish-card" onclick="toggleWish(this)">
-                    <div class="wish-front">
-                        <span class="wish-emoji">🥹</span>
-                        <p class="wish-label">tap me Selfie...</p>
-                    </div>
-                    <div class="wish-back">
-                        <p class="wish-message">"You're not just special to me—you're irreplaceable. The world is brighter because you exist in it. Never forget that. 🤍"</p>
-                    </div>
-                </div>
-
-                <div class="wish-card" onclick="toggleWish(this)">
-                    <div class="wish-front">
-                        <span class="wish-emoji">🦋</span>
-                        <p class="wish-label">something sweet...</p>
-                    </div>
-                    <div class="wish-back">
-                        <p class="wish-message">"You walked into my life and suddenly all the pieces made sense. Thank you for being you—perfectly, beautifully you. 💜"</p>
-                    </div>
-                </div>
-
-                <div class="wish-card" onclick="toggleWish(this)">
-                    <div class="wish-front">
-                        <span class="wish-emoji">🌙</span>
-                        <p class="wish-label">a little secret...</p>
-                    </div>
-                    <div class="wish-back">
-                        <p class="wish-message">"If I could gift you anything, I'd give you the ability to see yourself through my eyes. Then you'd know how truly amazing you are. ✨"</p>
-                    </div>
-                </div>
-
-                <div class="wish-card" onclick="toggleWish(this)">
-                    <div class="wish-front">
-                        <span class="wish-emoji">🎀</span>
-                        <p class="wish-label">open this one...</p>
-                    </div>
-                    <div class="wish-back">
-                        <p class="wish-message">"Some people make the world more beautiful just by being in it. You're one of them. Happy birthday to my favorite human! 🩷"</p>
-                    </div>
-                </div>
-
-                <div class="wish-card" onclick="toggleWish(this)">
-                    <div class="wish-front">
-                        <span class="wish-emoji">💫</span>
-                        <p class="wish-label">just for you...</p>
-                    </div>
-                    <div class="wish-back">
-                        <p class="wish-message">"You deserve a love that feels like coming home, dreams that take your breath away, and a birthday as magical as you are. 🌈"</p>
-                    </div>
-                </div>
-
-                <div class="wish-card" onclick="toggleWish(this)">
-                    <div class="wish-front">
-                        <span class="wish-emoji">🪽</span>
-                        <p class="wish-label">one more...</p>
-                    </div>
-                    <div class="wish-back">
-                        <p class="wish-message">"This isn't just a birthday wish—it's a promise. I'll always be here, cheering for you, believing in you, loving you. Forever & always. 💕"</p>
-                    </div>
+                <div class="cp-card reveal-right">
+                    <div class="cp-circle"><img src="assets/Bride_original.png" alt="Ranjani"></div>
+                    <div class="cp-init">R</div>
+                    <h3>Ranjani</h3>
+                    <p>The Bride</p>
                 </div>
             </div>
-            <button class="nav-btn" onclick="scrollToSection('final-surprise')">
-                Your Grand Finale 🎁
-            </button>
-        </section>
+        </div>
+        <!-- Sun/Mandala design at bottom -->
+        <div class="sun-mandala"></div>
+    </section>
 
-        <!-- 🎁 Final Surprise Section -->
-        <section class="final-surprise" id="final-surprise">
-            <h2 class="section-title">🎁 Your Grand Finale</h2>
+    <!-- ============================================================
+     SECTION 6: WHERE OUR STORY BEGINS — Golden (scattered letters)
+     ============================================================ -->
+    <section class="sec-story">
+        <h2 class="story-title anim-ls" id="storyTitle">
+            Where Our Story Begins
+        </h2>
+    </section>
 
-            <div class="surprise-content">
-                <div class="countdown-box">
-                    <p class="countdown-label">Moments until the surprise reveal:</p>
-                    <div class="countdown-timer">
-                        <div class="timer-digit">
-                            <span id="days">0</span>
-                            <p>Days</p>
+    <!-- ============================================================
+     SECTION 7: PHOTO GALLERY — Golden
+     ============================================================ -->
+    <section class="sec-gallery">
+        <div class="gal-grid reveal-up">
+            <div class="gi"><img src="assets/Couple1.jpeg" alt="Samuel & Ranjani"></div>
+            <div class="gi"><img src="assets/Couple2.jpeg" alt="Samuel & Ranjani"></div>
+            <div class="gi"><img src="assets/couple3.jpeg" alt="Samuel & Ranjani"></div>
+            <div class="gi"><img src="assets/Couple4.jpeg" alt="Samuel & Ranjani"></div>
+            <div class="gi"><img src="assets/couple5.jpeg" alt="Samuel & Ranjani"></div>
+            <div class="gi"><img src="assets/couple6.jpeg" alt="Samuel & Ranjani"></div>
+            <div class="gi"><img src="assets/couple7.jpeg" alt="Samuel & Ranjani"></div>
+            <div class="gi"><img src="assets/couple8.jpeg" alt="Samuel & Ranjani"></div>
+        </div>
+        <div class="cmandala BL"><img src="assets/mandala_corner.svg" alt=""></div>
+        <div class="cmandala BR"><img src="assets/mandala_corner.svg" alt=""></div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 9: OCCASION — Pink bg + Couple Photo
+     ============================================================ -->
+    <section class="sec-events">
+        <div class="cmandala TL op"><img src="assets/mandala_corner.svg" alt=""></div>
+        <div class="cmandala TR op"><img src="assets/mandala_corner.svg" alt=""></div>
+        <div class="ft-inner">
+
+            <!-- COUNTDOWN TIMER -->
+            <div class="countdown-wrap reveal-up">
+                <p class="countdown-label">Counting Down to Our Big Day</p>
+                <div class="countdown-boxes">
+                    <div class="cd-box">
+                        <div class="cd-ring">
+                            <svg class="cd-svg" viewBox="0 0 80 80">
+                                <circle class="cd-track" cx="40" cy="40" r="34"/>
+                                <circle class="cd-fill" id="cdRingDays" cx="40" cy="40" r="34" style="--total:213.6"/>
+                            </svg>
+                            <span class="cd-num" id="cdDays">--</span>
                         </div>
-                        <div class="timer-digit">
-                            <span id="hours">0</span>
-                            <p>Hours</p>
+                        <span class="cd-unit">Days</span>
+                    </div>
+                    <div class="cd-sep">♥</div>
+                    <div class="cd-box">
+                        <div class="cd-ring">
+                            <svg class="cd-svg" viewBox="0 0 80 80">
+                                <circle class="cd-track" cx="40" cy="40" r="34"/>
+                                <circle class="cd-fill" id="cdRingHours" cx="40" cy="40" r="34" style="--total:213.6"/>
+                            </svg>
+                            <span class="cd-num" id="cdHours">--</span>
                         </div>
-                        <div class="timer-digit">
-                            <span id="minutes">0</span>
-                            <p>Minutes</p>
+                        <span class="cd-unit">Hours</span>
+                    </div>
+                    <div class="cd-sep">♥</div>
+                    <div class="cd-box">
+                        <div class="cd-ring">
+                            <svg class="cd-svg" viewBox="0 0 80 80">
+                                <circle class="cd-track" cx="40" cy="40" r="34"/>
+                                <circle class="cd-fill" id="cdRingMins" cx="40" cy="40" r="34" style="--total:213.6"/>
+                            </svg>
+                            <span class="cd-num" id="cdMins">--</span>
                         </div>
-                        <div class="timer-digit">
-                            <span id="seconds">0</span>
-                            <p>Seconds</p>
+                        <span class="cd-unit">Minutes</span>
+                    </div>
+                    <div class="cd-sep">♥</div>
+                    <div class="cd-box">
+                        <div class="cd-ring">
+                            <svg class="cd-svg" viewBox="0 0 80 80">
+                                <circle class="cd-track" cx="40" cy="40" r="34"/>
+                                <circle class="cd-fill" id="cdRingSecs" cx="40" cy="40" r="34" style="--total:213.6"/>
+                            </svg>
+                            <span class="cd-num" id="cdSecs">--</span>
                         </div>
+                        <span class="cd-unit">Seconds</span>
                     </div>
                 </div>
+            </div>
 
-                <div class="surprise-message">
-                    <p class="surprise-text">The biggest surprise is yet to come...</p>
+            <p class="occ-txt reveal-up">occasion of our Marriage</p>
+            <div class="ft-photo-block reveal-up">
+                <div class="ft-couple d1">
+                    <img src="assets/couple9.jpeg" alt="Samuel & Ranjani">
                 </div>
-
-                <button class="cta-button glow-button surprise-button" onclick="triggerFinalSurprise()">
-                    🎊 REVEAL SURPRISE 🎊
-                </button>
+                <p class="couple-name-tag">Samuel &amp; Ranjani</p>
+                <p class="couple-year-tag">2026</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Floating Music Note -->
-        <button id="music-toggle" class="music-button" onclick="toggleMusic()">
-            <span class="music-icon">🎵</span>
-        </button>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p class="footer-text">Made with 💝 just for you. Happy Birthday! 🎉</p>
-            <p class="footer-date" id="footer-date"></p>
-            <div class="footer-brand">
-                <span class="brand-icon">🌐</span>
-                <span class="brand-name">ModernWebstudio</span>
+    <!-- ============================================================
+     SECTION 10: FOOTER — Pink + Marigold Curtain + Directions
+     ============================================================ -->
+    <footer class="sec-footer">
+        <!-- Mandala bg decoration -->
+        <div class="footer-mandala-bg"></div>
+        <!-- Car lives directly here so it can travel the full width -->
+        <div class="car-track">
+            <div class="car-wrap">
+                <div class="car-hearts">
+                    <span class="ht" style="--s:14px;--d:0s;--x:-30px"></span>
+                    <span class="ht" style="--s:10px;--d:.6s;--x:10px"></span>
+                    <span class="ht" style="--s:18px;--d:1.1s;--x:-10px"></span>
+                    <span class="ht" style="--s:11px;--d:1.7s;--x:25px"></span>
+                    <span class="ht" style="--s:15px;--d:2.3s;--x:-20px"></span>
+                    <span class="ht" style="--s:9px; --d:2.8s;--x:35px"></span>
+                    <span class="ht" style="--s:13px;--d:3.4s;--x:0px"></span>
+                </div>
+                <div class="car-pic" id="weddingCar">
+                    <img src="assets/vintage_car.svg" alt="Wedding Car">
+                </div>
             </div>
-        </footer>
-    </div>
+        </div>
+        <div class="ev-inner">
+            <div class="ev-cols">
+                <div class="ev-col reveal-left">
+                    <h3 class="ev-h anim-ls">Engagement</h3>
+                    <p class="evi">On Wednesday, 27th May 2026</p>
+                    <p class="evt">7:00 PM Onwards</p>
+                    <p class="evp">Thiruvona Mahal</p>
+                    <p class="evc">Karanthai, Thanjavur</p>
+                    <a href="https://www.google.com/maps?q=Q4XQ+MGP,+Sundaram+pillai+Nagar,+Thanjavur,+Tamil+Nadu+613008&ftid=0x3baac765ee82992d:0xdb4217f334d6afee&entry=gps" target="_blank"
+                        class="dbtn"><i class="fas fa-map-marker-alt"></i> Get Directions</a>
+                </div>
+                <div class="ev-col reveal-up">
+                    <h3 class="ev-h anim-ls">Marriage</h3>
+                    <p class="evi">On Thursday, 28th May 2026</p>
+                    <p class="evt">9:00 AM Onwards</p>
+                    <p class="evp">Thiruvona Mahal</p>
+                    <p class="evc">Karanthai, Thanjavur</p>
+                    <a href="https://www.google.com/maps?q=Q4XQ+MGP,+Sundaram+pillai+Nagar,+Thanjavur,+Tamil+Nadu+613008&ftid=0x3baac765ee82992d:0xdb4217f334d6afee&entry=gps" target="_blank"
+                        class="dbtn"><i class="fas fa-map-marker-alt"></i> Get Directions</a>
+                </div>
+                <div class="ev-col reveal-right">
+                    <h3 class="ev-h anim-ls">Reception</h3>
+                    <p class="evi">On Saturday, 30th May 2026</p>
+                    <p class="evt">6:00 PM Onwards</p>
+                    <p class="evp">Grand Vijay Convention Centre</p>
+                    <p class="evc">Thanjavur</p>
+                    <a href="https://www.google.com/maps?q=Grand+Vijay+convention+centre,+Trichy+Main+Rd,+Lakshmi+Nagar,+New+Housing+Unit,+Thanjavur,+Tamil+Nadu&ftid=0x0:0x395a84c7cdb9b910&entry=gps" target="_blank" class="dbtn"><i
+                            class="fas fa-map-marker-alt"></i> Get Directions</a>
+                </div>
+            </div>
+            <div class="req reveal-up">
+                <p>We Request your gracious presence on the Auspicious</p>
+                <p>occasion of our Marriage & Reception.</p>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Background Music Audio Element -->
-    <!-- Songs play in sequence: song1 → song2 → song3 → song1... (automatic loop) -->
-    <!-- Add your songs to Assets folder: birthday-music.mp3, song2.mp3, song3.mp3 -->
-    <audio id="bg-music" preload="auto">
-        <source src="Assets/birthday-music.mp3" type="audio/mpeg">
-    </audio>
 
-    <!-- Surprise Reveal Sound Effect -->
-    <!-- Download from: https://youtube.com/shorts/fP8PbMG16tE and save as Assets/surprise-sound.mp3 -->
-    <audio id="surprise-sound" preload="auto">
-        <source src="Assets/surprise-sound.mp3" type="audio/mpeg">
-    </audio>
+    <script>
+        // Scroll reveal
+        const obs = new IntersectionObserver(es => {
+            es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis') });
+        }, { threshold: .1, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right').forEach(el => obs.observe(el));
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="script.js"></script>
+        // Automatic Letter Wrapping for Headings
+        document.querySelectorAll('.anim-ls').forEach(el => {
+            const text = el.innerText;
+            el.innerHTML = text.split('').map(char => {
+                if (char === ' ') return '<span>&nbsp;</span>';
+                const r = (Math.random() * 16 - 8).toFixed(1); // Random rotate -8 to 8
+                const y = (Math.random() * 12 - 6).toFixed(1); // Random Y offset -6 to 6
+                return `<span class="anim-char" style="--r:${r}deg; --y:${y}px">${char}</span>`;
+            }).join('');
+        });
+
+        // Observer for character animation
+        const charObs = new IntersectionObserver(es => {
+            es.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.anim-char').forEach((l, i) => {
+                        setTimeout(() => l.classList.add('show'), i * 80);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.anim-ls').forEach(el => charObs.observe(el));
+
+        // ── Marriage Hall: fixed panel, JS scroll-driven 3D bend ──
+        (function () {
+            const zone = document.getElementById('hallZone');
+            const img = document.getElementById('hallImg');
+            const tag = document.getElementById('hallTag1');
+            const caption = document.getElementById('hallCaption');
+            const vig = zone ? zone.querySelector('.hall-vignette') : null;
+            const blend = document.getElementById('hallBlend');
+            if (!zone || !img) return;
+
+            const lerp = (a, b, t) => a + (b - a) * t;
+            const clamp01 = v => Math.min(1, Math.max(0, v));
+            const easeOut = t => 1 - Math.pow(1 - t, 3);
+            const easeInOut = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+            function update() {
+                const rect = zone.getBoundingClientRect();
+                const total = zone.offsetHeight - window.innerHeight;
+                const raw = clamp01(-rect.top / total);
+
+                // Phase 1 (0–0.4) : flat view — enjoy the hall
+                // Phase 2 (0.4–0.8): 3D zoom-in (walk through the door)
+                // Phase 3 (0.8–1.0): blend out to couple section
+                const p2 = clamp01((raw - 0.40) / 0.40);
+                const p3 = clamp01((raw - 0.80) / 0.20);
+
+                // Zoom from scale 1 → 2.2 with perspective so it feels 3D
+                const scale = lerp(1.0, 2.8, easeInOut(p2));
+                // Slight rotateX tilt during zoom (bends forward as you "enter")
+                const rotateX = lerp(0, 5, easeInOut(p2)) * (1 - p3);
+
+                // Special reveal: transition from slightly dim/sepia to full bright color
+                const brightness = lerp(0.8, 1.1, easeInOut(p2));
+                const saturate = lerp(0.7, 1.2, easeInOut(p2));
+
+                img.style.transform = `scale(${scale}) perspective(1000px) rotateX(${rotateX}deg)`;
+                img.style.filter = `brightness(${brightness}) saturate(${saturate})`;
+
+                if (vig) vig.style.opacity = 0.2 + p2 * 0.5;
+                if (tag) tag.style.opacity = clamp01(1 - raw * 3.5);
+                if (caption) caption.style.opacity = easeOut(p3);
+                if (blend) blend.style.opacity = easeOut(p3);
+            }
+
+            window.addEventListener('scroll', update, { passive: true });
+            update();
+        })();
+
+        // ── COUNTDOWN TIMER ──
+        (function () {
+            const target = new Date('2026-05-28T09:00:00').getTime();
+            const circ   = 213.6;
+            let loaded   = false;
+
+            function setRing(el, pct) {
+                if (!el) return;
+                el.style.strokeDashoffset = circ - Math.max(0, Math.min(1, pct)) * circ;
+            }
+
+            function getValues() {
+                const diff = Math.max(0, target - Date.now());
+                return {
+                    days:  Math.floor(diff / 86400000),
+                    hours: Math.floor((diff % 86400000) / 3600000),
+                    mins:  Math.floor((diff % 3600000)  / 60000),
+                    secs:  Math.floor((diff % 60000)    / 1000)
+                };
+            }
+
+            function tick() {
+                const v = getValues();
+                document.getElementById('cdDays').textContent  = String(v.days).padStart(2,'0');
+                document.getElementById('cdHours').textContent = String(v.hours).padStart(2,'0');
+                document.getElementById('cdMins').textContent  = String(v.mins).padStart(2,'0');
+                document.getElementById('cdSecs').textContent  = String(v.secs).padStart(2,'0');
+                setRing(document.getElementById('cdRingDays'),  v.days  / 365);
+                setRing(document.getElementById('cdRingHours'), v.hours / 24);
+                setRing(document.getElementById('cdRingMins'),  v.mins  / 60);
+                setRing(document.getElementById('cdRingSecs'),  v.secs  / 60);
+            }
+
+            function animateIn() {
+                if (loaded) return;
+                loaded = true;
+                const v   = getValues();
+                const dur = 1600;
+                const fps = 16;
+                let elapsed = 0;
+                const ease = t => 1 - Math.pow(1 - t, 3);
+                const items = [
+                    { ring: 'cdRingDays',  num: 'cdDays',  val: v.days,  max: 365 },
+                    { ring: 'cdRingHours', num: 'cdHours', val: v.hours, max: 24  },
+                    { ring: 'cdRingMins',  num: 'cdMins',  val: v.mins,  max: 60  },
+                    { ring: 'cdRingSecs',  num: 'cdSecs',  val: v.secs,  max: 60  }
+                ];
+                const timer = setInterval(() => {
+                    elapsed += fps;
+                    const t = Math.min(1, elapsed / dur);
+                    const e = ease(t);
+                    items.forEach(({ ring, num, val, max }) => {
+                        document.getElementById(num).textContent = String(Math.round(val * e)).padStart(2,'0');
+                        setRing(document.getElementById(ring), (val * e) / max);
+                    });
+                    if (t >= 1) { clearInterval(timer); setInterval(tick, 1000); }
+                }, fps);
+            }
+
+            const cdWrap = document.querySelector('.countdown-wrap');
+            if (cdWrap) {
+                const io = new IntersectionObserver(entries => {
+                    if (entries[0].isIntersecting) { animateIn(); io.disconnect(); }
+                }, { threshold: 0.3 });
+                io.observe(cdWrap);
+            }
+        })();
+
+        // Wedding Car: auto left↔right handled by CSS animation
+
+        // ── GLOBAL FLOATING CAMERA: Full Project Orchestration ──
+        (function() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const cameraWrap = document.getElementById('globalCamera');
+            const camera = cameraWrap.querySelector('.floating-camera');
+            const sections = document.querySelectorAll('section, .hall-zone, footer');
+            
+            // Initial State (Hero Section)
+            gsap.set(cameraWrap, { x: "-50%", y: "20vh", scale: 0.6, opacity: 0 });
+
+            // Create a Master Timeline that spans the whole page
+            const masterTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 2,
+                    anticipatePin: 1
+                }
+            });
+
+            // Orchestra of Camera Movements across sections
+            masterTl
+                // Scroll 1: Reveal from Hero
+                .to(cameraWrap, { opacity: 1, y: "15vh", scale: 0.8, duration: 1 })
+                
+                // Scroll 2: Move to Bottom-Left during Hall zone
+                .to(cameraWrap, { x: "-40vw", y: "35vh", scale: 0.5, rotationY: 45, duration: 2 })
+                
+                // Scroll 3: Drift to Top-Right during Groom/Bride
+                .to(cameraWrap, { x: "35vw", y: "-35vh", scale: 0.4, rotationY: -30, rotationX: 10, duration: 2 })
+                
+                // Scroll 4: Focus Center-Deep during Gallery
+                .to(cameraWrap, { x: "0vw", y: "0vh", scale: 1.2, rotationY: 0, rotationX: 20, duration: 2 })
+                
+                // Scroll 5: Rotate and Side-Drift during Events
+                .to(cameraWrap, { x: "-35vw", y: "20vh", scale: 0.6, rotationX: -10, rotationY: 60, duration: 2 })
+                
+                // Scroll 6: Final Exit into Footer
+                .to(cameraWrap, { x: "0vw", y: "40vh", scale: 0.3, opacity: 0, duration: 2 });
+
+            // Smooth Mouse Parallax (Always Active)
+            window.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 50;
+                const y = (e.clientY / window.innerHeight - 0.5) * 50;
+                
+                gsap.to(camera, {
+                    rotationY: x,
+                    rotationX: -y,
+                    duration: 1.5,
+                    ease: "power2.out"
+                });
+            });
+
+        })();
+
+        // ── BETTER THINGS: Sparkle Cursor & Music Toggle ──
+        (function() {
+            // 1. Sparkle Cursor Trail
+            const sparkleCont = document.getElementById('cursorSparkle');
+            document.addEventListener('mousemove', (e) => {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle-star';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkleCont.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            });
+
+            // 2. Music Player Interaction
+            const musicBtn = document.getElementById('musicPlayer');
+            let isPlaying = false;
+            // Note: In a real scenario, you'd add: const audio = new Audio('path_to_music.mp3'); 
+            musicBtn.addEventListener('click', () => {
+                isPlaying = !isPlaying;
+                musicBtn.classList.toggle('playing', isPlaying);
+                // if(isPlaying) audio.play(); else audio.pause();
+            });
+        })();
+
+    </script>
+
+    <!-- INTRO DOOR SCRIPT -->
+    <script>
+        (function () {
+            const overlay = document.getElementById('intro-overlay');
+            const btn     = document.getElementById('openDoorBtn');
+            const left    = overlay.querySelector('.door-left');
+            const right   = overlay.querySelector('.door-right');
+            const music   = document.getElementById('weddingMusic');
+            const canvas  = document.getElementById('introCanvas');
+            const ctx     = canvas.getContext('2d');
+
+            function resizeCanvas() {
+                canvas.width  = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const COLORS = ['#D4A017','#C2185B','#fff','#F5D16A','#f7cdd6','#E8B830'];
+
+            /* ── Floating ambient petals ── */
+            const petals = Array.from({length: 28}, () => ({
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+                r: Math.random() * 4 + 2,
+                color: COLORS[Math.floor(Math.random() * COLORS.length)],
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: Math.random() * 0.7 + 0.3,
+                alpha: Math.random() * 0.5 + 0.15,
+                rot: Math.random() * Math.PI * 2,
+                rotV: (Math.random() - 0.5) * 0.03
+            }));
+
+            function drawDiamond(p) {
+                ctx.save();
+                ctx.globalAlpha = p.alpha;
+                ctx.fillStyle   = p.color;
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rot);
+                ctx.beginPath();
+                ctx.moveTo(0, -p.r * 2);
+                ctx.lineTo(p.r, 0);
+                ctx.lineTo(0,  p.r * 2);
+                ctx.lineTo(-p.r, 0);
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+
+            let floatId;
+            function floatLoop() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                petals.forEach(p => {
+                    p.x += p.vx; p.y += p.vy; p.rot += p.rotV;
+                    if (p.y > canvas.height + 10) { p.y = -10; p.x = Math.random() * canvas.width; }
+                    drawDiamond(p);
+                });
+                floatId = requestAnimationFrame(floatLoop);
+            }
+            floatLoop();
+
+            /* ── Burst on click ── */
+            function burst(cx, cy) {
+                const particles = Array.from({length: 90}, () => {
+                    const angle = Math.random() * Math.PI * 2;
+                    const spd   = Math.random() * 10 + 3;
+                    return {
+                        x: cx, y: cy,
+                        vx: Math.cos(angle) * spd,
+                        vy: Math.sin(angle) * spd,
+                        r: Math.random() * 5 + 2,
+                        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+                        alpha: 1, rot: Math.random() * Math.PI * 2,
+                        rotV: (Math.random() - 0.5) * 0.18,
+                        g: Math.random() * 0.18 + 0.05
+                    };
+                });
+                function loop() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    let alive = false;
+                    particles.forEach(p => {
+                        p.x += p.vx; p.y += p.vy; p.vy += p.g;
+                        p.rot += p.rotV; p.alpha -= 0.016;
+                        if (p.alpha > 0) { alive = true; drawDiamond(p); }
+                    });
+                    if (alive) requestAnimationFrame(loop);
+                }
+                loop();
+            }
+
+            btn.addEventListener('click', function (e) {
+                cancelAnimationFrame(floatId);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                const r = btn.getBoundingClientRect();
+                burst(r.left + r.width / 2, r.top + r.height / 2);
+
+                if (music) { music.volume = 0.65; music.play().catch(() => {}); }
+
+                overlay.classList.add('opened');
+                setTimeout(function () {
+                    left.classList.add('open');
+                    right.classList.add('open');
+                }, 350);
+
+                setTimeout(function () {
+                    overlay.style.display = 'none';
+                    document.body.style.overflow = '';
+                }, 3400);
+            });
+
+            document.body.style.overflow = 'hidden';
+        })();
+    </script>
 </body>
+
 </html>
