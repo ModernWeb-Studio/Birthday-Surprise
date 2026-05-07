@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 160" width="80" height="160">
+  <!-- Chain -->
+  <line x1="40" y1="0" x2="40" y2="70" stroke="#B8860B" stroke-width="2"/>
+  <circle cx="40" cy="15" r="3" fill="#DAA520"/>
+  <circle cx="40" cy="35" r="3" fill="#DAA520"/>
+  <circle cx="40" cy="55" r="3" fill="#DAA520"/>
+  <!-- Lamp top ring -->
+  <ellipse cx="40" cy="72" rx="12" ry="4" fill="#CD7F32" stroke="#8B6914" stroke-width="1"/>
+  <!-- Lamp body -->
+  <path d="M28,72 Q26,90 20,105 Q18,110 25,112 L55,112 Q62,110 60,105 Q54,90 52,72 Z" fill="url(#lampGrad)" stroke="#8B6914" stroke-width="1.5"/>
+  <!-- Lamp bottom -->
+  <ellipse cx="40" cy="112" rx="16" ry="5" fill="#CD7F32" stroke="#8B6914" stroke-width="1"/>
+  <!-- Decorative dots on lamp -->
+  <circle cx="35" cy="88" r="2" fill="#FFD700" opacity="0.7"/>
+  <circle cx="45" cy="88" r="2" fill="#FFD700" opacity="0.7"/>
+  <circle cx="40" cy="95" r="2" fill="#FFD700" opacity="0.7"/>
+  <!-- Oil/wick holder -->
+  <ellipse cx="40" cy="116" rx="8" ry="3" fill="#8B4513"/>
+  <!-- Flame glow -->
+  <radialGradient id="flameGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#FFD700" stop-opacity="0.6"/>
+    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="40" cy="60" r="20" fill="url(#flameGlow)">
+    <animate attributeName="r" values="18;22;18" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Flame -->
+  <path d="M40,48 Q44,55 43,62 Q42,66 40,68 Q38,66 37,62 Q36,55 40,48Z" fill="#FF8C00">
+    <animate attributeName="d" values="M40,48 Q44,55 43,62 Q42,66 40,68 Q38,66 37,62 Q36,55 40,48Z;M40,46 Q45,54 42,61 Q41,66 40,68 Q39,66 38,61 Q35,54 40,46Z;M40,48 Q44,55 43,62 Q42,66 40,68 Q38,66 37,62 Q36,55 40,48Z" dur="0.6s" repeatCount="indefinite"/>
+  </path>
+  <path d="M40,52 Q42,57 42,62 Q41,65 40,66 Q39,65 38,62 Q38,57 40,52Z" fill="#FFD700">
+    <animate attributeName="d" values="M40,52 Q42,57 42,62 Q41,65 40,66 Q39,65 38,62 Q38,57 40,52Z;M40,50 Q43,56 41,61 Q40,65 40,66 Q40,65 39,61 Q37,56 40,50Z;M40,52 Q42,57 42,62 Q41,65 40,66 Q39,65 38,62 Q38,57 40,52Z" dur="0.5s" repeatCount="indefinite"/>
+  </path>
+  <!-- Lamp gradient -->
+  <defs>
+    <linearGradient id="lampGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8A317"/>
+      <stop offset="30%" stop-color="#CD7F32"/>
+      <stop offset="60%" stop-color="#B8860B"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <defs>
+    <linearGradient id="carBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6B8E7B"/>
+      <stop offset="50%" stop-color="#5A7D6A"/>
+      <stop offset="100%" stop-color="#4A6D5A"/>
+    </linearGradient>
+    <linearGradient id="carTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5F0E8"/>
+      <stop offset="100%" stop-color="#E8E0D0"/>
+    </linearGradient>
+  </defs>
+  <!-- Shadow -->
+  <ellipse cx="200" cy="185" rx="160" ry="10" fill="#000" opacity="0.1"/>
+  <!-- Car body lower -->
+  <path d="M50,130 L50,155 Q50,165 60,165 L340,165 Q350,165 350,155 L350,130 Z" fill="url(#carBody)"/>
+  <!-- Car body main -->
+  <path d="M40,130 Q40,105 55,105 L345,105 Q360,105 360,130 Z" fill="url(#carBody)" stroke="#3D5C4A" stroke-width="1"/>
+  <!-- Car top / cabin -->
+  <path d="M110,105 Q115,55 150,50 L280,50 Q310,55 310,105 Z" fill="url(#carTop)" stroke="#CCC" stroke-width="1"/>
+  <!-- Windows -->
+  <path d="M125,100 Q128,65 155,60 L200,60 L200,100 Z" fill="#87CEEB" opacity="0.7" stroke="#999" stroke-width="0.5"/>
+  <path d="M210,100 L210,60 L275,60 Q298,65 300,100 Z" fill="#87CEEB" opacity="0.7" stroke="#999" stroke-width="0.5"/>
+  <!-- Window divider -->
+  <line x1="205" y1="58" x2="205" y2="102" stroke="#AAA" stroke-width="3"/>
+  <!-- Headlights -->
+  <circle cx="355" cy="120" r="12" fill="#FFE082" stroke="#DAA520" stroke-width="2"/>
+  <circle cx="355" cy="120" r="6" fill="#FFF9C4"/>
+  <circle cx="45" cy="120" r="12" fill="#FFE082" stroke="#DAA520" stroke-width="2"/>
+  <circle cx="45" cy="120" r="6" fill="#FFF9C4"/>
+  <!-- Bumpers -->
+  <rect x="30" y="155" width="15" height="8" rx="2" fill="#C0C0C0"/>
+  <rect x="355" y="155" width="15" height="8" rx="2" fill="#C0C0C0"/>
+  <!-- Chrome strip -->
+  <line x1="55" y1="130" x2="345" y2="130" stroke="#C0C0C0" stroke-width="2.5"/>
+  <!-- Door handles -->
+  <rect x="185" y="118" width="15" height="3" rx="1.5" fill="#C0C0C0"/>
+  <rect x="235" y="118" width="15" height="3" rx="1.5" fill="#C0C0C0"/>
+  <!-- Wheels -->
+  <circle cx="110" cy="165" r="25" fill="#333"/>
+  <circle cx="110" cy="165" r="20" fill="#555"/>
+  <circle cx="110" cy="165" r="12" fill="#888"/>
+  <circle cx="110" cy="165" r="5" fill="#AAA"/>
+  <!-- Wheel spokes -->
+  <line x1="110" y1="148" x2="110" y2="182" stroke="#AAA" stroke-width="1.5"/>
+  <line x1="93" y1="165" x2="127" y2="165" stroke="#AAA" stroke-width="1.5"/>
+  <line x1="98" y1="153" x2="122" y2="177" stroke="#AAA" stroke-width="1.5"/>
+  <line x1="98" y1="177" x2="122" y2="153" stroke="#AAA" stroke-width="1.5"/>
+  <circle cx="300" cy="165" r="25" fill="#333"/>
+  <circle cx="300" cy="165" r="20" fill="#555"/>
+  <circle cx="300" cy="165" r="12" fill="#888"/>
+  <circle cx="300" cy="165" r="5" fill="#AAA"/>
+  <line x1="300" y1="148" x2="300" y2="182" stroke="#AAA" stroke-width="1.5"/>
+  <line x1="283" y1="165" x2="317" y2="165" stroke="#AAA" stroke-width="1.5"/>
+  <line x1="288" y1="153" x2="312" y2="177" stroke="#AAA" stroke-width="1.5"/>
+  <line x1="288" y1="177" x2="312" y2="153" stroke="#AAA" stroke-width="1.5"/>
+  <!-- License plate -->
+  <rect x="180" y="148" width="40" height="14" rx="2" fill="#FFF" stroke="#999" stroke-width="0.5"/>
+  <text x="200" y="159" font-size="8" fill="#333" text-anchor="middle" font-family="monospace">JUST WED</text>
+  <!-- Wedding decoration - flowers on hood -->
+  <circle cx="340" cy="95" r="5" fill="#FF6B6B"/>
+  <circle cx="350" cy="90" r="5" fill="#FFD93D"/>
+  <circle cx="332" cy="90" r="4" fill="#FF9FF3"/>
+  <circle cx="345" cy="82" r="4" fill="#FF6B6B"/>
+  <circle cx="355" cy="85" r="3" fill="#FFD93D"/>
+  <!-- Ribbon -->
+  <path d="M330,98 Q340,105 350,98" fill="none" stroke="#FF6B6B" stroke-width="2"/>
+</svg>
